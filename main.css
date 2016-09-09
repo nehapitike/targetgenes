@@ -1,0 +1,10 @@
+table{
+	border:1px solid black;
+}
+.header{
+	font-size: 12px solid black;
+}
+td{
+	border: 1px solid black;
+	border-right: 1px solid black;
+}
