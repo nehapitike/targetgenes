@@ -24,7 +24,7 @@
 				if(tbl){
 					tbl.parentNode.removeChild(tbl);
 				}
-				if($('#tf').val() != "TBX21"){
+				if($('#tf').val() != "TBX21" && $('#tf').val() != "JUNB" && $('#tf').val() != "IRF3" && $('#tf').val() != "SMAD5"){
 					document.getElementById("result").innerHTML=data;
 				}
 				else{
@@ -33,24 +33,20 @@
 				table.setAttribute("id", "myTable");
 
 				document.body.appendChild(table);
+				
 				for (var i = resu.length-1; i >= 0; i--)
 						{
-							if(i==0){
-								var row = table.insertRow(0);
-								var cell1 = row.insertCell(0);
-								var cell2 = row.insertCell(1);  								
-								cell1.innerHTML = "<strong>"+resu[i].gene+"</strong>";
-								cell2.innerHTML = "<strong >"+resu[i].signalvalue+"</strong>";
-								}
-								else{
-								var row = table.insertRow(0);
-								var cell1 = row.insertCell(0);
-								var cell2 = row.insertCell(1);
-								cell1.innerHTML = resu[i].gene;
-								cell2.innerHTML = resu[i].signalvalue;
-							}
+							var row = table.insertRow(0);
+							var cell1 = row.insertCell(0);
+							var cell2 = row.insertCell(1);
+							cell1.innerHTML = resu[i].gene;
+							cell2.innerHTML = resu[i].signalvalue;							
 						}
-				
+				var row = table.insertRow(0);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);  								
+				cell1.innerHTML = "<strong>"+"Gene"+"</strong>";
+				cell2.innerHTML = "<strong >"+"SignalValue"+"</strong>";
 				}
 			});
 
@@ -60,7 +56,8 @@
 		<h1 id="main_header">Target gene List</h1>
 		<select name="transcriptionfactors" id="tf">
 			<option>JUNB</option>
-			<option>IRF5</option>
+			<option>IRF3</option>
+			<option>SMAD5</option>
 			<option selected>TBX21</option>
 
 		</select>
