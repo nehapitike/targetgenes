@@ -12,7 +12,8 @@
 			$.post({
 				url : "tbx21.php", 
 				data: {
-					tf: $('#tf').val()
+					tf: $('#tf').val(),
+					limit: $("#limit").val()
 				},
 			
 			})
@@ -61,6 +62,9 @@
 			<option selected>TBX21</option>
 
 		</select>
+		
+		<input type="number" id="limit" min="20" max="1000" step= "10"/>
+			
 		<input type="submit" onclick="test();">
 		
 		<p id="result"></p>
